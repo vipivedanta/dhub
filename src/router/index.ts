@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../components/auth/Login.vue'
+import LocaleSwitch from '../components/locale/LocaleSwitch.vue'
+import Register from '../components/auth/Register.vue'
 
 Vue.use(VueRouter)
 
@@ -15,7 +17,9 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }, 
-  { path: '/login', name : 'Login', component : Login }
+  { path: '/login', name : 'Login', component : Login },
+  { path: '/register', name: 'Register', component: Register },
+  { path: '/locale-change', name: 'LocaleSwitch', component: LocaleSwitch }
 ]
 
 const router = new VueRouter({

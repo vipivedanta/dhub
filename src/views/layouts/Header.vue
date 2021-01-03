@@ -2,7 +2,7 @@
     <header>
   <div class="dhb-container">
     <div class="header-top clearit">
-      <div class="top-logo"> <a href="index.html" class="dhb-logo">
+      <div class="top-logo"> <router-link to="/locale-change" class="dhb-logo">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="160.8px" height="26px" viewBox="0 0 160.8 26" style="enable-background:new 0 0 160.8 26;" xml:space="preserve">
 <g>
@@ -24,7 +24,7 @@
 </g>
 </svg>
 
-        </a> </div>
+        </router-link> </div>
       <div class="top-right"> <a href="#" class="cart-btn"><i class="icon-cart"></i></a> <a href="menu.html" class="menu-btn"><i class="icon-menu"></i></a> </div>
     </div>
     <form>

@@ -4,7 +4,7 @@
       
       <div class="form-bx">
           <form class="login-form">
-              <h5 class="text-center mb-10">Sing in to your account</h5>
+              <h5 class="text-center mb-10">{{ $t('login.header') }}</h5>
               
               <div class="form-control-bx error">
               <input type="text" placeholder="User ID (Email address)" class="dhb-form-control">

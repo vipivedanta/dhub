@@ -1,0 +1,39 @@
+{
+    "message": "hello i18n !!",
+    "login": {
+        "header" : "Connectez-vous à votre compte",
+        "login_here": "Connectez-vous ici"
+    },
+    "changeLocale": {
+        "label" : "Change ta langue"
+    },
+    "register": {
+        "header": "Créer un compte",
+        "validations": {
+            "first_name" : "Le prénom est requis",
+            "last_name": "le nom est obligatoire",
+            "email": "l'email est requis",
+            "invalid_email": "l'email que vous avez fourni n'est pas valide",
+            "phone": "le téléphone est requis",
+            "invalid_phone": "le téléphone que vous avez entré n'est pas valide",
+            "password": "Mot de passe requis",
+            "confirm_password": "veuillez confirmer le mot de passe",
+            "confirm_password_not_matches": "Les mots de passe ne correspondent pas"
+        }
+    },
+    "messages": {
+        "all_mandatory": "Tous les champs sont requis, sauf indication contraire"
+    },
+    "user": {
+      "first_name": "Prénom",
+      "last_name": "nom de famille",
+      "email": "adresse e-mail",
+      "phone": "téléphone",
+      "password": "mot de passe",
+      "confirm_password": "mot de passe"
+    },
+      "form": {
+          "next": "prochaine",
+          "already_have_account": "Vous avez déjà un compte ?"
+    }
+  }

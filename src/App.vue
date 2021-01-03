@@ -15,6 +15,7 @@ import './assets/dhb.css';
 
 import Header from './views/layouts/Header';
 import Footer from './views/layouts/Footer';
+
 export default {
   name: 'App',
   components : { Header, Footer }
