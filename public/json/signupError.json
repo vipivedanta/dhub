@@ -1,0 +1,8 @@
+{
+    "statusCode":400,
+    "appStatusCode":"CB-4000",
+    "errorMessage": "Internal Server Error.",
+    "detail": "","errorType": "SERVER_ERROR",
+    "info": "www.dhub.com/help/login",
+    "recoverable":false
+}

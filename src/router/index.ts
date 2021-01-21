@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../components/auth/Login.vue'
 import LocaleSwitch from '../components/locale/LocaleSwitch.vue'
 import Register from '../components/auth/Register.vue'
+import VerifyOtp from '../components/auth/VerifyOtp.vue';
 
 Vue.use(VueRouter)
 
@@ -17,9 +18,11 @@ const routes: Array<RouteConfig> = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }, 
-  { path: '/login', name : 'Login', component : Login },
-  { path: '/register', name: 'Register', component: Register },
-  { path: '/locale-change', name: 'LocaleSwitch', component: LocaleSwitch }
+  { path: '', name : 'Home', component: Register },
+  { path: '/signin', name : 'Login', component : Login },
+  { path: '/signup', name: 'Register', component: Register },
+  { path: '/locale-change', name: 'LocaleSwitch', component: LocaleSwitch },
+  { path: '/verify-otp', name: 'VerifyOtp', component: VerifyOtp }
 ]
 
 const router = new VueRouter({

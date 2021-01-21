@@ -75,9 +75,14 @@
               <div class="info-txt mb-10">
               By signing up here, you agree to the D-Hub <a href="#">terms of service</a> and <a href="#">privacy policy</a>
                   </div>
+
+              <div v-if="message.signupError" class="alert alert-danger">
+                  {{ message.signupError.errorMessage }}<br/>
+                  <a :href="message.signupError.info">{{$t('messages.learn_more')}}</a>
+              </div>
               
               
-              <button class="dhb-btn btn-s2" type="button" @click="saveUser()">{{ $t('form.next') }}</button>
+              <button :disabled="ui.requestInProgress" class="dhb-btn btn-s2" type="button" @click="saveUser()">{{ $t('form.next') }}</button>
               
               <div class="text-center mt-5">{{ $t('form.already_have_account') }} <a href="login.html">{{ $t('login.login_here')}}</a></div>
               
@@ -92,9 +97,12 @@
 <script>
 
 import { required, email, maxLength, minLength } from "vuelidate/lib/validators";
+import { signUp } from '../../services/authService';
 
 export default {
+
     name: 'Register',
+
     data() {
         return {
             user : {
@@ -104,6 +112,14 @@ export default {
                 phone: '',
                 password: '',
                 confirm_password: ''
+            },
+
+            message: {
+                signupError : false
+            },
+
+            ui: {
+                requestInProgress: false
             }
         }
     },
@@ -123,15 +139,29 @@ export default {
 
         validateForm: function() {
             this.$v.$touch();
-            if( this.$v.$invalid ){
-                return false;
-            }
-            return true
+            return this.$v.$invalid;
         },
 
-        saveUser: function() {
-            if(!this.validateForm()) 
-                return false
+        saveUser: async function() {
+            
+            this.message.signupError = false;
+            if( this.validateForm() ) return false;
+            
+            this.ui.requestInProgress = true;
+            let signupResponse = await signUp( this.user );
+            this.ui.requestInProgress = false;
+
+            console.log(signupResponse,'sss')
+            if( signupResponse.statusCode == 400 ) {
+                this.message.signupError = signupResponse;
+                return false;
+            }
+
+            if( signupResponse.statusCode == 403 ) {
+                this.$store.dispatch('setLastPhoneDigits',signupResponse.phone)
+                this.$router.push({ name: 'VerifyOtp'} );
+            }
+            
         }
     },
 

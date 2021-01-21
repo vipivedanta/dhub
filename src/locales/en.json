@@ -23,7 +23,9 @@
   },
   "messages": {
       "all_mandatory": "All fields are required unless otherwise noted",
-      "will_be_user_id": "This will be your user id"
+      "will_be_user_id": "This will be your user id",
+      "learn_more": "Lear more",
+      "global_required_message": "This field is required"
   },
   "user": {
       "first_name": "First Name",
@@ -36,5 +38,15 @@
   "form": {
       "next": "Next",
       "already_have_account": "Already have an account ?"
+  },
+  "otp": {
+      "otp_phone_error": "Sorry! We couldn't send the OTP to your phone",
+      "phone_verification": "Phone verification",
+      "otp_sent_to": "Sent to phone number ending in {phone}",
+      "please_enter_code":"Please enter the code",
+      "number_sharing_policy": "Your phone number will not be shared with others. Message and data rate might apply.",
+      "verify": "Verify",
+      "not_yet_received": "Not yet received?",
+      "resend_otp": "Resend"
   }
 }
