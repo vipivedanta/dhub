@@ -1,0 +1,8 @@
+{
+    "statusCode" : "200",
+    "userId": "mike@gmail.com",
+    "password": "Testpwd",
+    "sessionId": "1001",
+    "sessionData": "2002",
+    "deviceId": "abc123"
+}
